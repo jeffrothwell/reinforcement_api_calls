@@ -1,7 +1,10 @@
+Ward names exercise:
 save data into variable using:
 tor_ward_resp = HTTParty.get('https://represent.opennorth.ca/boundaries/toronto-wards/')
 
 parsing seemed to do nothing, but I was able to work with tor_ward_resp as such:
+note, I now see that I needed to call the parse method passing tor_ward_resp.body as an argument
+this converts the resp to a string, which the parse method needs to work properly
 
 tor_ward_resp["objects"] # gives me an array where each element is a hash containing information about a ward
 
