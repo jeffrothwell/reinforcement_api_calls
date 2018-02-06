@@ -1,0 +1,10 @@
+save data into variable using:
+tor_ward_resp = HTTParty.get('https://represent.opennorth.ca/boundaries/toronto-wards/')
+
+parsing seemed to do nothing, but I was able to work with tor_ward_resp as such:
+
+tor_ward_resp["objects"] # gives me an array where each element is a hash containing information about a ward
+
+I iterated through and stored the names of each ward using:
+
+array_of_ward_names = tor_ward_resp["objects"].map { |ward| ward["name"] }
